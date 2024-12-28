@@ -6,6 +6,7 @@ const users = {
   admins: [
     { username: "prki", password: "belgradebet" },
     { username: "Djordje", password: "DjordjeK289" },
+    { username: "admin", password: "sremcica11253"},
   ],
   members: [
     { username: "justantestingaccount", password: "thisisanpasswordfortesting" },
