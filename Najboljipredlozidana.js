@@ -29,7 +29,7 @@ fileInput.addEventListener('change', (event) => {
 
 // Handle image removal
 removeButton.addEventListener('click', () => {
-    localStorage.removeItem('category9Image');
+    localStorage.removeItem('category1Image');
     imageElement.src = '';
     imageElement.style.display = 'none';
     removeButton.style.display = 'none';
