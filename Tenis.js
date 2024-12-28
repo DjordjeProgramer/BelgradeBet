@@ -56,3 +56,52 @@ function displayImage(imageData) {
     removeButton.style.display = 'block';
     uploadButton.style.display = 'none';
 }
+
+// text
+
+// DOM Elements for Text Section
+const textElement = document.getElementById('categoryText-input');
+const saveTextButton = document.getElementById('saveTextBtn');
+const removeTextButton = document.getElementById('removeTextBtn');
+
+// Load saved text on page load
+document.addEventListener('DOMContentLoaded', () => {
+    loadSavedText();
+});
+
+// Handle text save
+saveTextButton.addEventListener('click', () => {
+    const text = textElement.value;
+    if (text) {
+        saveText(text);
+        displayText(text);
+    }
+});
+
+// Handle text removal
+removeTextButton.addEventListener('click', () => {
+    localStorage.removeItem('category9Text');
+    textElement.value = '';
+    removeTextButton.style.display = 'none';
+    saveTextButton.style.display = 'block';
+});
+
+// Save text to localStorage
+function saveText(text) {
+    localStorage.setItem('category9Text', text);
+}
+
+// Load saved text from localStorage
+function loadSavedText() {
+    const savedText = localStorage.getItem('category9Text');
+    if (savedText) {
+        displayText(savedText);
+    }
+}
+
+// Display text and update UI
+function displayText(text) {
+    textElement.value = text;
+    removeTextButton.style.display = 'block';
+    saveTextButton.style.display = 'none';
+}

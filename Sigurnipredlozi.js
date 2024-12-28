@@ -29,7 +29,7 @@ fileInput.addEventListener('change', (event) => {
 
 // Handle image removal
 removeButton.addEventListener('click', () => {
-    localStorage.removeItem('category2Image');
+    localStorage.removeItem('category9Image');
     imageElement.src = '';
     imageElement.style.display = 'none';
     removeButton.style.display = 'none';
@@ -55,4 +55,53 @@ function displayImage(imageData) {
     imageElement.style.display = 'block';
     removeButton.style.display = 'block';
     uploadButton.style.display = 'none';
+}
+
+// text
+
+// DOM Elements for Text Section
+const textElement = document.getElementById('categoryText-input');
+const saveTextButton = document.getElementById('saveTextBtn');
+const removeTextButton = document.getElementById('removeTextBtn');
+
+// Load saved text on page load
+document.addEventListener('DOMContentLoaded', () => {
+    loadSavedText();
+});
+
+// Handle text save
+saveTextButton.addEventListener('click', () => {
+    const text = textElement.value;
+    if (text) {
+        saveText(text);
+        displayText(text);
+    }
+});
+
+// Handle text removal
+removeTextButton.addEventListener('click', () => {
+    localStorage.removeItem('category2Text');
+    textElement.value = '';
+    removeTextButton.style.display = 'none';
+    saveTextButton.style.display = 'block';
+});
+
+// Save text to localStorage
+function saveText(text) {
+    localStorage.setItem('category2Text', text);
+}
+
+// Load saved text from localStorage
+function loadSavedText() {
+    const savedText = localStorage.getItem('category2Text');
+    if (savedText) {
+        displayText(savedText);
+    }
+}
+
+// Display text and update UI
+function displayText(text) {
+    textElement.value = text;
+    removeTextButton.style.display = 'block';
+    saveTextButton.style.display = 'none';
 }

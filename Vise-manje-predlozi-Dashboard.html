@@ -169,6 +169,73 @@ img {
     }
 }
 
+/* Text Section Styles */
+.category textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #FFD700;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 10px;
+    resize: none;
+}
+
+.save-text-btn,
+.remove-text-btn {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-text-btn:hover,
+.remove-text-btn:hover {
+    background-color: #e6b800;
+}
+
+.remove-text-btn {
+    background-color: #ff4d4d;
+    display: none;
+}
+
+.remove-text-btn:hover {
+    background-color: #e60000;
+}
+
+/* Mobile Responsiveness (Add to your existing media queries) */
+@media (max-width: 768px) {
+    .category textarea {
+        font-size: 0.9rem;
+    }
+
+    .save-text-btn,
+    .remove-text-btn {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .category textarea {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .save-text-btn,
+    .remove-text-btn {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -196,6 +263,19 @@ img {
                 </div>
             </div>
         </div>
+
+        <!-- Category 2 - Text Section -->
+    <div class="container">
+        <div class="dashboard">
+            <div class="category" id="categoryText">
+                <h2>Vise-manje predlozi Text</h2>
+                <textarea class="category-text" id="categoryText-input" rows="4" placeholder="Enter your text here..."></textarea>
+                <button class="save-text-btn" id="saveTextBtn">Save Text</button>
+                <button class="remove-text-btn" id="removeTextBtn">Remove Text</button>
+            </div>
+        </div>
+    </div>
+
         <script src="Vise-manje-predlozi.js"></script>
     </div>
 

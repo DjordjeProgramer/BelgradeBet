@@ -1,8 +1,9 @@
 // DOM Elements
 const previewImage = document.getElementById('previewImage');
 const noImageMessage = document.getElementById('noImageMessage');
+const textBox = document.getElementById('message-box-write');
 
-// Load saved image on page load
+// Load saved image and text on page load
 document.addEventListener('DOMContentLoaded', () => {
     const savedImage = localStorage.getItem('category2Image');
     if (savedImage) {
@@ -12,5 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         previewImage.style.display = 'none';
         noImageMessage.style.display = 'block';
+    }
+
+    const savedText = localStorage.getItem('category2Text');
+    // Check if savedText is empty and set default text if necessary
+    if (savedText && savedText !== '') {
+        textBox.textContent = savedText;
+    } else {
+        textBox.textContent = 'Nista nije napisano na strani admina.';
     }
 });
